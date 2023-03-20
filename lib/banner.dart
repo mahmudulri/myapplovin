@@ -1,8 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:applovin_max/applovin_max.dart';
+import 'package:get/get.dart';
 
-class BannerAds extends StatelessWidget {
+class BannerAds extends StatefulWidget {
   const BannerAds({super.key});
+
+  @override
+  State<BannerAds> createState() => _BannerAdsState();
+}
+
+class _BannerAdsState extends State<BannerAds> {
+  @override
+  void initState() {
+    getBack();
+
+    super.initState();
+  }
+
+  getBack() async {
+    await Future.delayed(Duration(seconds: 15));
+    Get.back();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +41,9 @@ class BannerAds extends StatelessWidget {
                   onAdExpandedCallback: (ad) {},
                   onAdCollapsedCallback: (ad) {}),
             ),
+            SizedBox(
+              height: 20,
+            ),
             MaxAdView(
               adUnitId: "f5d85a30f12ca9e2",
               adFormat: AdFormat.banner,
@@ -33,6 +54,9 @@ class BannerAds extends StatelessWidget {
                   onAdExpandedCallback: (ad) {},
                   onAdCollapsedCallback: (ad) {}),
             ),
+            SizedBox(
+              height: 20,
+            ),
             MaxAdView(
               adUnitId: "83bdc57c9cb496f0",
               adFormat: AdFormat.banner,
@@ -42,6 +66,35 @@ class BannerAds extends StatelessWidget {
                   onAdClickedCallback: (ad) {},
                   onAdExpandedCallback: (ad) {},
                   onAdCollapsedCallback: (ad) {}),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            MaxAdView(
+              adUnitId: "573f0b7a27daf9df",
+              adFormat: AdFormat.banner,
+              listener: AdViewAdListener(
+                  onAdLoadedCallback: (ad) {},
+                  onAdLoadFailedCallback: (adUnitId, error) {},
+                  onAdClickedCallback: (ad) {},
+                  onAdExpandedCallback: (ad) {},
+                  onAdCollapsedCallback: (ad) {}),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            MaxAdView(
+              adUnitId: "c040bb6ec624ef08",
+              adFormat: AdFormat.banner,
+              listener: AdViewAdListener(
+                  onAdLoadedCallback: (ad) {},
+                  onAdLoadFailedCallback: (adUnitId, error) {},
+                  onAdClickedCallback: (ad) {},
+                  onAdExpandedCallback: (ad) {},
+                  onAdCollapsedCallback: (ad) {}),
+            ),
+            SizedBox(
+              height: 20,
             ),
             MaxAdView(
               adUnitId: "1ed1333f4b8b880f",
@@ -53,35 +106,8 @@ class BannerAds extends StatelessWidget {
                   onAdExpandedCallback: (ad) {},
                   onAdCollapsedCallback: (ad) {}),
             ),
-            MaxAdView(
-              adUnitId: "f5d85a30f12ca9e2",
-              adFormat: AdFormat.banner,
-              listener: AdViewAdListener(
-                  onAdLoadedCallback: (ad) {},
-                  onAdLoadFailedCallback: (adUnitId, error) {},
-                  onAdClickedCallback: (ad) {},
-                  onAdExpandedCallback: (ad) {},
-                  onAdCollapsedCallback: (ad) {}),
-            ),
-            MaxAdView(
-              adUnitId: "83bdc57c9cb496f0",
-              adFormat: AdFormat.banner,
-              listener: AdViewAdListener(
-                  onAdLoadedCallback: (ad) {},
-                  onAdLoadFailedCallback: (adUnitId, error) {},
-                  onAdClickedCallback: (ad) {},
-                  onAdExpandedCallback: (ad) {},
-                  onAdCollapsedCallback: (ad) {}),
-            ),
-            MaxAdView(
-              adUnitId: "1ed1333f4b8b880f",
-              adFormat: AdFormat.banner,
-              listener: AdViewAdListener(
-                  onAdLoadedCallback: (ad) {},
-                  onAdLoadFailedCallback: (adUnitId, error) {},
-                  onAdClickedCallback: (ad) {},
-                  onAdExpandedCallback: (ad) {},
-                  onAdCollapsedCallback: (ad) {}),
+            SizedBox(
+              height: 20,
             ),
             MaxAdView(
               adUnitId: "f5d85a30f12ca9e2",
@@ -93,38 +119,37 @@ class BannerAds extends StatelessWidget {
                   onAdExpandedCallback: (ad) {},
                   onAdCollapsedCallback: (ad) {}),
             ),
-            MaxAdView(
-              adUnitId: "83bdc57c9cb496f0",
-              adFormat: AdFormat.banner,
-              listener: AdViewAdListener(
-                  onAdLoadedCallback: (ad) {},
-                  onAdLoadFailedCallback: (adUnitId, error) {},
-                  onAdClickedCallback: (ad) {},
-                  onAdExpandedCallback: (ad) {},
-                  onAdCollapsedCallback: (ad) {}),
-            ),
-            MaxAdView(
-              adUnitId: "1ed1333f4b8b880f",
-              adFormat: AdFormat.banner,
-              listener: AdViewAdListener(
-                  onAdLoadedCallback: (ad) {},
-                  onAdLoadFailedCallback: (adUnitId, error) {},
-                  onAdClickedCallback: (ad) {},
-                  onAdExpandedCallback: (ad) {},
-                  onAdCollapsedCallback: (ad) {}),
-            ),
-            MaxAdView(
-              adUnitId: "f5d85a30f12ca9e2",
-              adFormat: AdFormat.banner,
-              listener: AdViewAdListener(
-                  onAdLoadedCallback: (ad) {},
-                  onAdLoadFailedCallback: (adUnitId, error) {},
-                  onAdClickedCallback: (ad) {},
-                  onAdExpandedCallback: (ad) {},
-                  onAdCollapsedCallback: (ad) {}),
+            SizedBox(
+              height: 20,
             ),
             MaxAdView(
               adUnitId: "83bdc57c9cb496f0",
+              adFormat: AdFormat.banner,
+              listener: AdViewAdListener(
+                  onAdLoadedCallback: (ad) {},
+                  onAdLoadFailedCallback: (adUnitId, error) {},
+                  onAdClickedCallback: (ad) {},
+                  onAdExpandedCallback: (ad) {},
+                  onAdCollapsedCallback: (ad) {}),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            MaxAdView(
+              adUnitId: "573f0b7a27daf9df",
+              adFormat: AdFormat.banner,
+              listener: AdViewAdListener(
+                  onAdLoadedCallback: (ad) {},
+                  onAdLoadFailedCallback: (adUnitId, error) {},
+                  onAdClickedCallback: (ad) {},
+                  onAdExpandedCallback: (ad) {},
+                  onAdCollapsedCallback: (ad) {}),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            MaxAdView(
+              adUnitId: "c040bb6ec624ef08",
               adFormat: AdFormat.banner,
               listener: AdViewAdListener(
                   onAdLoadedCallback: (ad) {},

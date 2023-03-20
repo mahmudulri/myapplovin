@@ -4,6 +4,7 @@ import 'package:applovin_ads/banner.dart';
 import 'package:applovin_ads/video.dart';
 import 'package:applovin_max/applovin_max.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 
 class Homepage extends StatefulWidget {
@@ -18,13 +19,15 @@ class _HomepageState extends State<Homepage> {
   void initState() {
     // initializeInterstitialAds();
     // gonow();
+
     super.initState();
   }
 
   var _interstitialRetryAttempt = 0;
+  var _rewardedAdRetryAttempt = 0;
 
   // gonow() async {
-  //   await Future.delayed(Duration(seconds: 20));
+  //   await Future.delayed(Duration(seconds: 5));
   //   Get.to(() => BannerAds());
   // }
 
@@ -46,6 +49,25 @@ class _HomepageState extends State<Homepage> {
               height: 20,
             ),
             // ElevatedButton(
+            //   onPressed: () async {
+            //     bool isReady =
+            //         (await AppLovinMAX.isRewardedAdReady("59eb88a36ed1b347"))!;
+            //     if (isReady) {
+            //       AppLovinMAX.showRewardedAd("59eb88a36ed1b347");
+            //     }
+            //   },
+            //   child: Text("Load vide Ads"),
+            // ),
+            // SizedBox(
+            //   height: 20,
+            // ),
+            // ElevatedButton(
+            //   onPressed: () {
+            //     initializeRewardedAds();
+            //   },
+            //   child: Text("Play video Ads"),
+            // ),
+            // ElevatedButton(
             //   onPressed: () {
             //     initializeInterstitialAds();
             //   },
@@ -57,9 +79,9 @@ class _HomepageState extends State<Homepage> {
             // ElevatedButton(
             //   onPressed: () async {
             //     bool isReady = (await AppLovinMAX.isInterstitialReady(
-            //         "aba093c60d303809"))!;
+            //         "47e385d911df8814"))!;
             //     if (isReady) {
-            //       AppLovinMAX.showInterstitial("aba093c60d303809");
+            //       AppLovinMAX.showInterstitial("47e385d911df8814");
             //     }
             //     // Get.to(() => Videoads());
             //   },
@@ -76,6 +98,15 @@ class _HomepageState extends State<Homepage> {
       onAdLoadedCallback: (ad) {
         // Interstitial ad is ready to be shown. AppLovinMAX.isInterstitialReady(_interstitial_ad_unit_id) will now return 'true'
         print('Interstitial ad loaded from ' + ad.networkName);
+        Fluttertoast.showToast(
+          msg: "Add loaded",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.TOP_LEFT,
+          timeInSecForIosWeb: 1,
+          backgroundColor: Colors.red,
+          textColor: Colors.white,
+          fontSize: 16.0,
+        );
 
         // Reset retry attempt
         _interstitialRetryAttempt = 0;
@@ -94,7 +125,7 @@ class _HomepageState extends State<Homepage> {
             's');
 
         Future.delayed(Duration(milliseconds: retryDelay * 1000), () {
-          AppLovinMAX.loadInterstitial("aba093c60d303809");
+          AppLovinMAX.loadInterstitial("47e385d911df8814");
         });
       },
       onAdDisplayedCallback: (ad) {},
@@ -104,6 +135,38 @@ class _HomepageState extends State<Homepage> {
     ));
 
     // Load the first interstitial
-    AppLovinMAX.loadInterstitial("aba093c60d303809");
+    AppLovinMAX.loadInterstitial("47e385d911df8814");
   }
+
+  // void initializeRewardedAds() {
+  //   AppLovinMAX.setRewardedAdListener(RewardedAdListener(
+  //       onAdLoadedCallback: (ad) {
+  //         // Rewarded ad is ready to be shown. AppLovinMAX.isRewardedAdReady(_rewarded_ad_unit_id) will now return 'true'
+  //         print('Rewarded ad loaded from ' + ad.networkName);
+
+  //         // Reset retry attempt
+  //         _rewardedAdRetryAttempt = 0;
+  //       },
+  //       onAdLoadFailedCallback: (adUnitId, error) {
+  //         // Rewarded ad failed to load
+  //         // We recommend retrying with exponentially higher delays up to a maximum delay (in this case 64 seconds)
+  //         _rewardedAdRetryAttempt = _rewardedAdRetryAttempt + 1;
+
+  //         int retryDelay = pow(2, min(6, _rewardedAdRetryAttempt)).toInt();
+  //         print('Rewarded ad failed to load with code ' +
+  //             error.code.toString() +
+  //             ' - retrying in ' +
+  //             retryDelay.toString() +
+  //             's');
+
+  //         Future.delayed(Duration(milliseconds: retryDelay * 1000), () {
+  //           AppLovinMAX.loadRewardedAd("59eb88a36ed1b347");
+  //         });
+  //       },
+  //       onAdDisplayedCallback: (ad) {},
+  //       onAdDisplayFailedCallback: (ad, error) {},
+  //       onAdClickedCallback: (ad) {},
+  //       onAdHiddenCallback: (ad) {},
+  //       onAdReceivedRewardCallback: (ad, reward) {}));
+  // }
 }
