@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:applovin_ads/banner.dart';
@@ -27,8 +28,8 @@ class _HomepageState extends State<Homepage> {
   var _rewardedAdRetryAttempt = 0;
 
   // gonow() async {
-  //   await Future.delayed(Duration(seconds: 5));
-  //   Get.to(() => BannerAds());
+  //   await Future.delayed(Duration(seconds: 900));
+  //   Get.back();
   // }
 
   @override
@@ -84,6 +85,7 @@ class _HomepageState extends State<Homepage> {
             //       AppLovinMAX.showInterstitial("47e385d911df8814");
             //     }
             //     // Get.to(() => Videoads());
+            //     // gonow();
             //   },
             //   child: Text("Interstitial ads"),
             // ),

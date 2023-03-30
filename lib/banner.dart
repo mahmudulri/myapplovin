@@ -18,7 +18,7 @@ class _BannerAdsState extends State<BannerAds> {
   }
 
   getBack() async {
-    await Future.delayed(Duration(seconds: 15));
+    await Future.delayed(Duration(seconds: 900));
     Get.back();
   }
 

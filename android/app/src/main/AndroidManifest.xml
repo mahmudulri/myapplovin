@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.raysoft.vipbettingtipsexpertprediction">
    <application
-        android:label="applovin_ads"
+        android:label="vip sports "
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">  
         <activity
