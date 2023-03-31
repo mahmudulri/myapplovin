@@ -68,27 +68,27 @@ class _HomepageState extends State<Homepage> {
             //   },
             //   child: Text("Play video Ads"),
             // ),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     initializeInterstitialAds();
-            //   },
-            //   child: Text("Load ads Ads"),
-            // ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // ElevatedButton(
-            //   onPressed: () async {
-            //     bool isReady = (await AppLovinMAX.isInterstitialReady(
-            //         "47e385d911df8814"))!;
-            //     if (isReady) {
-            //       AppLovinMAX.showInterstitial("47e385d911df8814");
-            //     }
-            //     // Get.to(() => Videoads());
-            //     // gonow();
-            //   },
-            //   child: Text("Interstitial ads"),
-            // ),
+            ElevatedButton(
+              onPressed: () {
+                initializeInterstitialAds();
+              },
+              child: Text("Load ads Ads"),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                bool isReady = (await AppLovinMAX.isInterstitialReady(
+                    "68d0302aa2afa7d3"))!;
+                if (isReady) {
+                  AppLovinMAX.showInterstitial("68d0302aa2afa7d3");
+                }
+                // Get.to(() => Videoads());
+                // gonow();
+              },
+              child: Text("Interstitial ads"),
+            ),
           ],
         ),
       ),
@@ -127,7 +127,7 @@ class _HomepageState extends State<Homepage> {
             's');
 
         Future.delayed(Duration(milliseconds: retryDelay * 1000), () {
-          AppLovinMAX.loadInterstitial("47e385d911df8814");
+          AppLovinMAX.loadInterstitial("68d0302aa2afa7d3");
         });
       },
       onAdDisplayedCallback: (ad) {},
@@ -137,7 +137,7 @@ class _HomepageState extends State<Homepage> {
     ));
 
     // Load the first interstitial
-    AppLovinMAX.loadInterstitial("47e385d911df8814");
+    AppLovinMAX.loadInterstitial("68d0302aa2afa7d3");
   }
 
   // void initializeRewardedAds() {
